@@ -14,7 +14,7 @@
 <div class="container">
     <h2>Welcome to Chaaps Audio!</h2>
 
-    <h3><a href="/dashboard">Start Listening!</a></h3>
+    <h3><a href="/dashboard">See your Song List</a></h3>
 
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <!-- Indicators -->
