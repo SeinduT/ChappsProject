@@ -19,7 +19,6 @@
 				      <a class="nav-link" href="/logout">Logout</a>
 				    </li>
 				  </ul>
-		<table class="table">
 		<nav class="navbar navbar-expand-sm bg-light justify-content-left">
   			<ul class="navbar-nav">
     			<li class="nav-item">
@@ -40,7 +39,7 @@
 		        <input type="text" name="artist">
 		        <input type="submit" value="Search Artists">
 		    </form> --%>
-		
+		<table class="table">
 		    <thead>
 		    <tr>
 		        <th>Name</th>
