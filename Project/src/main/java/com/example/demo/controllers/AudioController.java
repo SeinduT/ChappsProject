@@ -1,7 +1,6 @@
 package com.example.demo.controllers;
 
 import com.example.demo.models.Audio;
-import com.example.demo.models.User;
 import com.example.demo.services.AudioService;
 import com.example.demo.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,15 +31,11 @@ public class AudioController {
 
     @RequestMapping("/dashboard")
     public String allSongs(Model model, HttpSession session) {
-        Long userId = (Long) session.getAttribute("user_id");
-        if(userId ==null){
-            return "redirect:/landing";
-        }
-        User user = this.userService.findOneUser(userId);
+
         List<Audio> lookifyList = this.audioService.audioList();
-        if (!lookifyList.isEmpty() && lookifyList != null) {
+        if (!lookifyList.isEmpty()) {
             model.addAttribute("songList", lookifyList);
-            model.addAttribute("user",user);
+
         }
         return "dashboard.jsp";
     }
