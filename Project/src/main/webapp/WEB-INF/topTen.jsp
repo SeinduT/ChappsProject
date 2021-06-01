@@ -28,18 +28,18 @@
 		    <p><a href="/dashboard"></a></p>
 		
 		    <thead>
-		    <tr>
-		        <th>Name</th>
-		        <th>Rating</th>
-		        <th>Action</th>
-		    </tr>
+			    <tr>
+			        <th>Name</th>
+			        <th>Rating</th>
+			        <th>Action</th>
+			    </tr>
 		    </thead>
 		    <tbody>
 		    <c:forEach items="${topTen}" var="topTen">
 		
 		        <tr>
-		            <td><c:out value="${topTen.rating}"/> <a href="/${topTen.id}"><c:out value="${topTen.title}"/></a>
-		                <c:out value="${song.artist}"></c:out></td>
+		            <td><a href="/${topTen.id}"><c:out value="${topTen.title}"/></a></td>
+		            <td><c:out value="${topTen.rating}"/></td>
 		        </tr>
 		    </c:forEach>
 		    </tbody>
