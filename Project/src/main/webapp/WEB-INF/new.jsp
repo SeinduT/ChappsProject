@@ -20,8 +20,6 @@
 
 </head>
 <body>
-
-
 	<div class="container">
 				<br>
 				  <ul class="nav justify-content-end">
