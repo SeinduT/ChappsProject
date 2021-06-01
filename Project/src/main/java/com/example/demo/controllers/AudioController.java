@@ -19,7 +19,7 @@ public class AudioController {
     @Autowired
     private AudioService audioService;
 
-    @RequestMapping("/")
+    @RequestMapping("/landing")
     public String indexPage() {
         return "index.jsp";
     }
