@@ -1,30 +1,30 @@
-
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 <!-- <link href="/css/style.css" rel="stylesheet"> -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
 <link rel="stylesheet" type="text/css" href="CSS/style.css">
+<link rel="icon" href="data:,">
 
 <html>
 
-<div class="index">
-<h2>Welcome to Chaaps Audio!</h2>
-
-<h3><a href="/dashboard">Start Listening!</a></h3>
 
 <div class="container">
+    <h2>Welcome to Chaaps Audio!</h2>
 
-<div id="myCarousel" class="carousel slide" data-ride="carousel">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-        <li data-target="#myCarousel" data-slide-to="2"></li>
-    </ol>
+    <h3><a href="/dashboard">Start Listening!</a></h3>
 
-    <!-- Wrapper for slides -->
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
     <div class="carousel-inner">
         <div class="item active">
             <img src="https://static.billboard.com/files/media/Ed-Sheeran-2018-cr-Teppei-Kishida-billboard-1548-compressed.jpg" alt="Chania">
@@ -60,7 +60,6 @@
         <span class="glyphicon glyphicon-chevron-right"></span>
         <span class="sr-only">Next</span>
     </a>
-</div>
 </div>
 </div>
 
