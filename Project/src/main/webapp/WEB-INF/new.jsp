@@ -29,12 +29,14 @@
 				    <p>
 				        <form:label path="title">Title</form:label>
 				        <form:errors path="title"></form:errors>
+				        <br>
 				        <form:input path="title"></form:input>
 				    </p>
 	
 				    <p>
 				        <form:label path="artist">Artist</form:label>
 				        <form:errors path="artist"></form:errors>
+				        <br>
 				        <form:input path="artist"></form:input>
 				    </p>
 				
@@ -42,20 +44,21 @@
 <%-- 				        <form:label path="rating">Rating</form:label>
 				        <form:errors path="rating"></form:errors>
 				        <form:input type="number" path="rating"></form:input> --%>
-				        
-				        <label for="rating">Select list (select one):</label>
-      					<select class="form-control" id="rating" name="rating">
-        					<option>1</option>
-        					<option>2</option>
-        					<option>3</option>
-        					<option>4</option>
-        					<option>5</option>
-        					<option>6</option>
-        					<option>7</option>
-        					<option>8</option>
-        					<option>9</option>
-        					<option>10</option>
-      					</select>
+				        <div class="row-inline">
+						    <label for="rating">Select Rating(select one):</label>
+			      			<select class="form-control" style="width:auto;" id="rating" name="rating">
+			        					<option>1</option>
+			        					<option>2</option>
+			        					<option>3</option>
+			        					<option>4</option>
+			        					<option>5</option>
+			        					<option>6</option>
+			        					<option>7</option>
+			        					<option>8</option>
+			        					<option>9</option>
+			        					<option>10</option>
+			      			</select>
+			      		</div>
 				    </p>
 				
 				
