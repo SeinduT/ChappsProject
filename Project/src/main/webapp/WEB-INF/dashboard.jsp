@@ -20,12 +20,26 @@
 				    </li>
 				  </ul>
 		<table class="table">
-		    <p><a href="/new">Add New</a> | <a href="/search/topTen">topSongs</a>|</p>
+		<nav class="navbar navbar-expand-sm bg-light justify-content-left">
+  			<ul class="navbar-nav">
+    			<li class="nav-item">
+      			<a class="nav-link" href="/new">Add New</a>
+    			</li>
+    			<li class="nav-item">
+      			<a class="nav-link" href="/search/topTen">topSongs</a>
+    			</li>
+  			</ul>
+		</nav>
+		<nav class="navbar navbar-expand-sm bg-light navbar-dark">
+  			<form class="form-inline" action="/song/search" method="get">
+    			<input class="form-control mc-sm-2" type="text" placeholder="Search Artists" name="artist">
+    			<button class="btn btn-success" type="submit" value="Search Artists">Search</form>
+		</nav>
 		
-		    <form action="/song/search" method="get">
+<%-- 		    <form action="/song/search" method="get">
 		        <input type="text" name="artist">
 		        <input type="submit" value="Search Artists">
-		    </form>
+		    </form> --%>
 		
 		    <thead>
 		    <tr>
