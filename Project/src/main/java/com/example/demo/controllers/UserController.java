@@ -42,7 +42,7 @@ public class UserController {
 		
 		User newUser = this.uServ.registerUser(user);
 		session.setAttribute("user_id", newUser.getId());
-		return "redirect:/events";
+		return "redirect:/";
 	}
 	
 	@PostMapping("/login")
@@ -54,7 +54,7 @@ public class UserController {
 		
 		User user1 = this.uServ.findUserByEmail(email);
 		session.setAttribute("user_id", user1.getId());
-		return "redirect:/events";
+		return "redirect:/";
 	}
 	
 	@GetMapping("/logout")
