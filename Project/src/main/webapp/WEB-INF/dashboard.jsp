@@ -13,7 +13,7 @@
 </head>
 <body>
 	<div class="container">
-				<h1>Welcome, ${user.firstName}</h1>
+				<h1>Welcome, ${user.firstName} ${user.lastName}</h1>
 				  <ul class="nav justify-content-end">
 				    <li class="nav-item">
 				      <a class="nav-link" href="/logout">Logout</a>

@@ -14,10 +14,15 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 <!-- <link href="/css/style.css" rel="stylesheet"> -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
 </head>
 <body>
+
+
 	<div class="container">
-				<h1>Welcome, ${user.firstName}</h1>
 				<br>
 				  <ul class="nav justify-content-end">
 				    <li class="nav-item">
@@ -29,13 +34,14 @@
 				  </ul>
 				  <br>
 	<%--@elvariable id="lookify" type="java"--%>
-			<form:form action="/newForm" method="post" modelAttribute="lookify">
+			<form:form action="/newForm" method="post" modelAttribute="lookify" >
+
 			    <p>
 			        <form:label path="title">Title</form:label>
 			        <form:errors path="title"></form:errors>
 			        <form:input path="title"></form:input>
 			    </p>
-			
+
 			    <p>
 			        <form:label path="artist">Artist</form:label>
 			        <form:errors path="artist"></form:errors>
@@ -49,7 +55,7 @@
 			    </p>
 			
 			
-			    <input type="submit" value="Add Song">
+			    <input type="submit" class="btn btn-info" value="Add Song">
 			
 			</form:form>
 	</div>

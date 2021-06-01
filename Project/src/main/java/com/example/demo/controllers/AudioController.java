@@ -1,7 +1,9 @@
 package com.example.demo.controllers;
 
 import com.example.demo.models.Audio;
+import com.example.demo.models.User;
 import com.example.demo.services.AudioService;
+import com.example.demo.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,6 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 import java.util.List;
 
@@ -19,16 +22,25 @@ public class AudioController {
     @Autowired
     private AudioService audioService;
 
+    @Autowired
+    private UserService userService;
+
     @RequestMapping("/landing")
     public String indexPage() {
         return "index.jsp";
     }
 
     @RequestMapping("/dashboard")
-    public String allSongs(Model model) {
+    public String allSongs(Model model, HttpSession session) {
+        Long userId = (Long) session.getAttribute("user_id");
+        if(userId ==null){
+            return "redirect:/landing";
+        }
+        User user = this.userService.findOneUser(userId);
         List<Audio> lookifyList = this.audioService.audioList();
         if (!lookifyList.isEmpty() && lookifyList != null) {
             model.addAttribute("songList", lookifyList);
+            model.addAttribute("user",user);
         }
         return "dashboard.jsp";
     }

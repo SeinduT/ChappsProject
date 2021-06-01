@@ -41,5 +41,10 @@ public class UserService {
 		}
 		return BCrypt.checkpw(password,  user.getPassword());
 	}
+
+	public User findOneUser(Long id){
+		User user = this.uRepo.findById(id).orElse(null);
+		return user;
+	}
 	
 }
