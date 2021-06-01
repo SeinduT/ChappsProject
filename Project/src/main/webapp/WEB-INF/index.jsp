@@ -8,6 +8,8 @@
 <link rel="stylesheet" type="text/css" href="CSS/style.css">
 
 <html>
+
+<div class="index">
 <h2>Welcome to Chaaps Audio!</h2>
 
 <h3><a href="/dashboard">Start Listening!</a></h3>
@@ -60,7 +62,7 @@
     </a>
 </div>
 </div>
-
+</div>
 
 
 </html>
