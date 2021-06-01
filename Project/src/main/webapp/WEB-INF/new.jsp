@@ -13,7 +13,7 @@
 </head>
 	<body>
 		<div class="container">
-					<br>
+			<h1 class="font-weight-light text-center">Please Input New Song Details</h1>
 					  <ul class="nav justify-content-end">
 					    <li class="nav-item">
 					      <a class="nav-link" href="/dashboard">Home</a>
@@ -39,9 +39,23 @@
 				    </p>
 				
 				    <p>
-				        <form:label path="rating">Rating</form:label>
+<%-- 				        <form:label path="rating">Rating</form:label>
 				        <form:errors path="rating"></form:errors>
-				        <form:input type="number" path="rating"></form:input>
+				        <form:input type="number" path="rating"></form:input> --%>
+				        
+				        <label for="rating">Select list (select one):</label>
+      					<select class="form-control" id="rating" name="rating">
+        					<option>1</option>
+        					<option>2</option>
+        					<option>3</option>
+        					<option>4</option>
+        					<option>5</option>
+        					<option>6</option>
+        					<option>7</option>
+        					<option>8</option>
+        					<option>9</option>
+        					<option>10</option>
+      					</select>
 				    </p>
 				
 				
