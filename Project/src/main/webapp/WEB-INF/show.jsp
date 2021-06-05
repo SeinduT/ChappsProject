@@ -40,7 +40,7 @@
 <%-- 		    </c:forEach> --%>
 		    </tbody>
 		</table>
-		<div class="form-group" action="/createcomment" method="post">
+		<div class="form-group" action=/"${song.id}/comment" method="post">
 			<form:input type="hidden" value="${user_id }" path="user" />
   			<label for="comment">Add Comment:</label>
   			<textarea class="form-control d-flex p-3 bg-secondary text-white" rows="5" id="comment"></textarea>
