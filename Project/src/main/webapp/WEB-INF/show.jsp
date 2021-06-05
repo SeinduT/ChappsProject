@@ -40,6 +40,18 @@
 <%-- 		    </c:forEach> --%>
 		    </tbody>
 		</table>
+		<div class="form-group" action="/createcomment" method="post">
+			<form:input type="hidden" value="${user_id }" path="user" />
+  			<label for="comment">Add Comment:</label>
+  			<textarea class="form-control d-flex p-3 bg-secondary text-white" rows="5" id="comment"></textarea>
+  			<br>
+  			<input type="submit" class="btn btn-info" value="Submit">
+		</div>
+		<div>
+			<c:forEach items="${audio.comments}" var="comment">
+				<p>${comment.details}</p>
+			</c:forEach>
+		</div>
 <%-- 		<p>Title: <c:out value="${song.title}"></c:out></p>
 		<p>Artist: <c:out value="${song.artist}"></c:out></p>
 		<p>Rating (1-10): <c:out value="${song.rating}"></c:out></p>

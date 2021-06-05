@@ -11,12 +11,15 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.example.demo.models.Audio;
 import com.example.demo.models.User;
 import com.example.demo.services.AudioService;
+import com.example.demo.services.CommentService;
 import com.example.demo.services.UserService;
 
 @Controller
@@ -26,6 +29,9 @@ public class AudioController {
 
     @Autowired
     private UserService userService;
+    
+    @Autowired
+    private CommentService commentService;
 
     @RequestMapping("/landing")
     public String indexPage() {
@@ -94,4 +100,20 @@ public class AudioController {
         this.audioService.delete(id);
         return "redirect:/dashboard";
     }
+    
+	@PostMapping("/comments/{id}")
+	public String Comment(@PathVariable("id") Long id, @RequestParam("details") String details, RedirectAttributes redirs, HttpSession session) {
+	Long userId = (Long)session.getAttribute("user_id");
+	if(userId == null) {
+		return "redirect:/"; 
+	}
+	if(details.equals("")) {
+		redirs.addFlashAttribute("error", "Comment must not be blank.");
+		return "redirect:/events/" + id; 
+	}
+	Audio audio = this.audioService.findById(id);
+	User user = this.userService.findUserById(userId);
+	this.commentService.createComment(comment);
+	return "redirect:/events/" + id; 
+	}
 }
