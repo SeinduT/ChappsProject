@@ -40,7 +40,7 @@ public class User {
 	private Date createdAt;
 	private Date updatedAt;
 	
-	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "commentCreator", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	private List<Comment> comments;
 	
 	@PrePersist

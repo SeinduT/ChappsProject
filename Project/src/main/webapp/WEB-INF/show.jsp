@@ -40,16 +40,22 @@
 <%-- 		    </c:forEach> --%>
 		    </tbody>
 		</table>
-		<div class="form-group" action=/"${song.id}/comment" method="post">
-			<form:input type="hidden" value="${user_id }" path="user" />
-  			<label for="comment">Add Comment:</label>
+		<form:form action="/${song.id}/comments/new" method="post" modelAttribute="comment">
+<%-- 			<form:input type="hidden" value="${user_id }" path="user" /> --%>
+			<p>
+				<form:label path="comment">Add Comment:</form:label>
+				<form:errors path="comment"></form:errors>
+				<br>
+				<form:input path="comment"></form:input>
+			</p>
+<!--   			<label for="comment">Add Comment:</label>
   			<textarea class="form-control d-flex p-3 bg-secondary text-white" rows="5" id="comment"></textarea>
-  			<br>
+  			<br> -->
   			<input type="submit" class="btn btn-info" value="Submit">
-		</div>
+		</form:form>
 		<div>
-			<c:forEach items="${audio.comments}" var="comment">
-				<p>${comment.details}</p>
+			<c:forEach items="${song.comments}" var="comment">
+				<p>${comment.comment}</p>
 			</c:forEach>
 		</div>
 <%-- 		<p>Title: <c:out value="${song.title}"></c:out></p>

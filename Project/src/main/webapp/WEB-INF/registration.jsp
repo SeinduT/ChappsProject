@@ -42,12 +42,12 @@
 					<div class="form-group">
 						<form:label path="password">Password:</form:label>
 						<form:errors path="password"/>
-						<form:input class="form-control" path="password"/>
+						<form:password class="form-control" path="password"/>
 					</div>
 					<div class="form-group">
 						<form:label path = "confirmPassword">Confirm Password:</form:label>
 						<form:errors path="confirmPassword"/>
-						<form:input class="form-control" path="confirmPassword"/>
+						<form:password class="form-control" path="confirmPassword"/>
 					</div>
 					<div class="d-flex justify-content-center">
 						<input class="btn btn-danger" type="submit" value="Submit"/>

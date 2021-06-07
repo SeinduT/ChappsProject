@@ -20,6 +20,7 @@ public class Audio {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    
     @Size(min = 5)
     private String title;
     @Size(min = 5)
@@ -28,7 +29,7 @@ public class Audio {
     @Max(value = 10)
     private Long rating;
 
-	@OneToMany(mappedBy = "audio", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "audioComments", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	private List<Comment> comments;
 	
     public Audio() {

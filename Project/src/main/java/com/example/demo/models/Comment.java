@@ -20,17 +20,19 @@ public class Comment {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private String details;
+	private String comment;
+	
 	@Column(updatable = false)
 	private Date createdAt;
 	private Date updatedAt;
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "user_id")
-	private User user;
+	private User commentCreator;
+	
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "audio_id")
-	private Audio audio;
+	private Audio audioComments;
 
 	@PrePersist
 	protected void onCreate() {
@@ -53,12 +55,13 @@ public class Comment {
 		this.id = id;
 	}
 
-	public String getDetails() {
-		return details;
+
+	public String getComment() {
+		return comment;
 	}
 
-	public void setDetails(String details) {
-		this.details = details;
+	public void setComment(String comment) {
+		this.comment = comment;
 	}
 
 	public Date getCreatedAt() {
@@ -77,20 +80,20 @@ public class Comment {
 		this.updatedAt = updatedAt;
 	}
 
-	public User getUser() {
-		return user;
+	public User getCommentCreator() {
+		return commentCreator;
 	}
 
-	public void setUser(User user) {
-		this.user = user;
+	public void setCommentCreator(User commentCreator) {
+		this.commentCreator = commentCreator;
 	}
 
-	public Audio getAudio() {
-		return audio;
+	public Audio getAudioComments() {
+		return audioComments;
 	}
 
-	public void setAudio(Audio audio) {
-		this.audio = audio;
+	public void setAudioComments(Audio audioComments) {
+		this.audioComments = audioComments;
 	}
 
 }

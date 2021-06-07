@@ -101,37 +101,4 @@ public class AudioController {
         return "redirect:/dashboard";
     }
     
-    @RequestMapping("/{id}/comment")
-    public String allSongsById(@PathVariable("id") long id, Model model, Comment comment, HttpSession session) {
-        Audio lookify = this.audioService.findById(id);
-        if (lookify != null) {
-            model.addAttribute("song", lookify);
-        }
-		Long userId = (Long)session.getAttribute("user_id");
-		User user = this.userService.findUserById(userId);
-		model.addAttribute("user", user);
-		this.commentService.createComment(comment);
-        return "show.jsp";
-    }
-    
-//	@PostMapping("/comments/{id}")
-//	public String Comment(@PathVariable("id") Long id,  Comment comment, Model model, RedirectAttributes redirs, HttpSession session) {
-//	Audio lookify = this.audioService.findById(id);
-//	Long userId = (Long)session.getAttribute("user_id");
-//	User user = this.userService.findUserById(userId);
-//	model.addAllAttributes("user", user);
-//	if(userId == null) {
-//		return "redirect:/"; 
-//	}
-//	if(comment.equals("")) {
-//		redirs.addFlashAttribute("error", "Comment must not be blank.");
-//		return "redirect:/events/" + id; 
-//	}
-//	/*
-//	 * Audio audio = this.audioService.findById(id); User user =
-//	 * this.userService.findUserById(userId);
-//	 */
-//	this.commentService.createComment(comment);
-//	return "redirect:/events/" + id; 
-//	}
 }

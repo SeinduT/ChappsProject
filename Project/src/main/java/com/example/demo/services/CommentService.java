@@ -15,21 +15,23 @@ public class CommentService {
 	@Autowired
 	private CommentRepository cRepo;
 	
-	public Comment createComment(Comment comment) {
-		return this.cRepo.save(comment);
+	public List<Comment> getComments() {
+		return this.cRepo.findAll();
 	}
 	
-	public List<Comment> getCommentByAudio(Audio audio) {
-		return this.cRepo.findByAudio(audio);
+	public Comment findById(Long id) {
+		return this.cRepo.findById(id).orElse(null);
 	}
 	
-	/*
-	 * public void comment(User user, Audio audio, String details) {
-	 * this.cRepo.save(new Comment(user, audio, details)); }
-	 */
-	
-	//update
-	public Comment updateComment(Comment comment) {
+	public Comment create(Comment comment) {
 		return this.cRepo.save(comment);
+	}
+
+	public Comment updateComment(Comment updatedComment) {
+		return this.cRepo.save(updatedComment);
+	}
+	
+	public void deleteComment(Long id) {
+		this.cRepo.deleteById(id);
 	}
 }
